@@ -1,3 +1,4 @@
 {
-    "mongoURI" : "mongodb+srv://rishu:12345@devconnector.ao3hi.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    "mongoURI" : "mongodb+srv://rishu:12345@devconnector.ao3hi.mongodb.net/test?retryWrites=true&w=majority",
+    "JWTsecret" : "my secret token"
 }
