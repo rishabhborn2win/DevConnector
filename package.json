@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "author": "Rishabh Mishra",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.10",
+    "prettier": "^2.1.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
