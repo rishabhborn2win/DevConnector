@@ -5,7 +5,6 @@ import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 
-
 // import axios from 'axios';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
@@ -24,17 +23,18 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       setAlert("Password do not match", "danger");
     } else {
       register({
-        name, email, password
-      })
+        name,
+        email,
+        password,
+      });
     }
-  }; 
+  };
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-
-  //redirect after successfull signup 
-  if(isAuthenticated){
-    return <Redirect to="/dashboard" />
+  //redirect after successfull signup
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
   }
 
   return (
@@ -103,7 +103,7 @@ Register.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
-})
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 export default connect(mapStateToProps, { setAlert, register })(Register);
