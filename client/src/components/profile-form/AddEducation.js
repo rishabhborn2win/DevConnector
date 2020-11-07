@@ -17,24 +17,33 @@ const AddEducation = ({ addEducation, history }) => {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { school, degree, fieldofstudy, from, to, current, description } = formData;
+  const {
+    school,
+    degree,
+    fieldofstudy,
+    from,
+    to,
+    current,
+    description,
+  } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-const onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    addEducation(formData, history)
-}
+    addEducation(formData, history);
+  };
 
   return (
     <Fragment>
       <h1 class="large text-primary">Add Your Education</h1>
       <p class="lead">
-        <i class="fas fa-code-branch"></i> Add any school or any course you enrolled
+        <i class="fas fa-code-branch"></i> Add any school or any course you
+        enrolled
       </p>
       <small>* = required field</small>
-      <form class="form" onSubmit={e => onSubmit(e)}>
+      <form class="form" onSubmit={(e) => onSubmit(e)}>
         <div class="form-group">
           <input
             type="text"
@@ -44,7 +53,7 @@ const onSubmit = (e) => {
             value={school}
             onChange={(e) => onChange(e)}
           />
-        </div>  
+        </div>
         <div class="form-group">
           <input
             type="text"
@@ -85,7 +94,7 @@ const onSubmit = (e) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{" "}
-            Current Job
+            Current School
           </p>
         </div>
         <div class="form-group">
@@ -103,7 +112,7 @@ const onSubmit = (e) => {
             name="description"
             cols="30"
             rows="5"
-            placeholder="Job Description"
+            placeholder="Education Description"
             value={description}
             onChange={(e) => onChange(e)}
           ></textarea>
