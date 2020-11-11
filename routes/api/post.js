@@ -207,7 +207,7 @@ router.put("/unlike/:postid", auth, async (req, res) => {
 
 //route     PUT api/post/comment/:post_id
 //desc:     comment on a post
-//access:   private 
+//access:   private
 router.put(
   "/comment/:postid",
   [auth, [check("text", "text field is req").not().isEmpty()]],
@@ -224,7 +224,7 @@ router.put(
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
-        user: req.user.id
+        user: req.user.id,
       };
 
       const post = await Post.findById(req.params.postid);

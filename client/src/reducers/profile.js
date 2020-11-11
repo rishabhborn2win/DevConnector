@@ -5,7 +5,7 @@ import {
   PROFILE_ERROR,
   UPDATE_PROFILE,
   GET_REPOS,
-  REPO_ERROR
+  REPO_ERROR,
 } from "../actions/types";
 
 const initialState = {
@@ -32,20 +32,20 @@ export default function abc(state = initialState, action) {
       return {
         ...state,
         profiles: payload,
-        loading: false
+        loading: false,
       };
     case GET_REPOS:
       return {
         ...state,
         repos: payload,
-        loading: false
-      }
+        loading: false,
+      };
     case REPO_ERROR:
       return {
         ...state,
         repos: [],
-        loading: false
-      }
+        loading: false,
+      };
     case PROFILE_ERROR:
       return {
         ...state,
