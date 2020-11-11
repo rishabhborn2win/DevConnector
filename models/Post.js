@@ -36,7 +36,7 @@ const postSchema = new Schema({
         required: true,
       },
       name: {
-        tyep: String,
+        type: String,
       },
       avatar: {
         type: String,
